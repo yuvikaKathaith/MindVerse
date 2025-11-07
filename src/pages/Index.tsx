@@ -54,16 +54,16 @@ const Index = () => {
             </span>
           </div>
           <div className="flex items-center gap-4">
-            <a href="#about" className="text-sm hover:text-primary transition-colors">About</a>
-            <a href="#features" className="text-sm hover:text-primary transition-colors">Features</a>
-            <a href="#contact" className="text-sm hover:text-primary transition-colors">Contact</a>
+            {/* <a href="#about" className="text-sm hover:text-primary transition-colors">About</a> */}
+            {/* <a href="#features" className="text-sm hover:text-primary transition-colors">Features</a> */}
+            {/* <a href="#contact" className="text-sm hover:text-primary transition-colors">Contact</a> */}
             {isLoggedIn ? (
               <Button variant="hero" size="sm" onClick={() => navigate("/dashboard")}>
                 Dashboard
               </Button>
             ) : (
               <Button variant="hero" size="sm" onClick={() => navigate("/auth")}>
-                Get Started
+                Sign In
               </Button>
             )}
           </div>
@@ -90,13 +90,13 @@ const Index = () => {
               Start Monitoring
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="#about">Learn More</a>
+              <a href="#features">Learn More</a>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Background Section */}
+      {/* Background Section
       <section id="about" className="container mx-auto px-6 py-16">
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="text-center space-y-4">
@@ -124,10 +124,10 @@ const Index = () => {
             </CardContent>
           </Card>
         </div>
-      </section>
+      </section> */}
 
       {/* Problem Statement */}
-      <section className="container mx-auto px-6 py-16 bg-muted/20">
+      {/* <section className="container mx-auto px-6 py-16 bg-muted/20">
         <div className="max-w-4xl mx-auto">
           <Card className="shadow-large border-primary/20">
             <CardHeader className="bg-gradient-to-r from-primary/10 to-accent/10">
@@ -163,7 +163,7 @@ const Index = () => {
             </CardContent>
           </Card>
         </div>
-      </section>
+      </section> */}
 
       {/* Importance */}
       <section className="container mx-auto px-6 py-16">
@@ -306,7 +306,7 @@ const Index = () => {
       </section>
 
       {/* Team & Contact */}
-      <section id="contact" className="container mx-auto px-6 py-16 bg-muted/20">
+      {/* <section id="contact" className="container mx-auto px-6 py-16 bg-muted/20">
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold">Get in Touch</h2>
@@ -367,7 +367,7 @@ const Index = () => {
             </Card>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer className="border-t border-border/50 bg-card/50 backdrop-blur-sm">
