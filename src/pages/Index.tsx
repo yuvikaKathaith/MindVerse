@@ -7,6 +7,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import ThemeToggle from "@/components/ThemeToggle";
+
 import {
   Heart,
   Activity,
@@ -48,15 +50,17 @@ const Index = () => {
       <nav className="sticky top-0 z-50 bg-card/80 backdrop-blur-sm border-b border-border/50 shadow-soft">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Heart className="h-6 w-6 text-primary" />
+            <img className="h-10 w-11" src="/favicon.ico"/>
             <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               HRV Stress Monitor
             </span>
           </div>
+
           <div className="flex items-center gap-4">
             {/* <a href="#about" className="text-sm hover:text-primary transition-colors">About</a> */}
             {/* <a href="#features" className="text-sm hover:text-primary transition-colors">Features</a> */}
             {/* <a href="#contact" className="text-sm hover:text-primary transition-colors">Contact</a> */}
+            <ThemeToggle />
             {isLoggedIn ? (
               <Button variant="hero" size="sm" onClick={() => navigate("/dashboard")}>
                 Dashboard
@@ -74,7 +78,7 @@ const Index = () => {
       <section className="container mx-auto px-6 py-20">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <div className="inline-block p-3 rounded-full bg-gradient-to-br from-primary to-accent mb-4">
-            <Heart className="h-12 w-12 text-primary-foreground" />
+            <Heart className="h-16 w-16 text-primary-foreground" />
           </div>
           <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
             Real-Time Stress Monitoring
@@ -212,33 +216,42 @@ const Index = () => {
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold">Main Objectives</h2>
-            <p className="text-muted-foreground">How our system helps students and professionals</p>
+            <p className="text-muted-foreground">How our system helps people</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card className="shadow-medium border-primary/20">
-              <CardHeader>
-                <Target className="h-8 w-8 text-primary mb-2" />
-                <CardTitle>Early Stress Identification</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2 text-sm text-muted-foreground">
-                <p>Real-time HRV analysis detects stress patterns before they become overwhelming, allowing for timely intervention.</p>
-                <p className="font-medium text-foreground">Benefits: Reduced anxiety, better mental health, prevented burnout</p>
-              </CardContent>
-            </Card>
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Objective 1 */}
+              <Card className="shadow-medium border-primary/20">
+                <CardHeader>
+                  <Target className="h-8 w-8 text-primary mb-2" />
+                  <CardTitle>Real-Time Stress Identification</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-2 text-sm text-muted-foreground">
+                  <p>
+                    Provide a real-time stress monitoring tool to help students identify stress arising from academic and social pressures, enabling timely self-care and intervention.
+                  </p>
+                  <p className="font-medium text-foreground">
+                    Benefits: Early awareness, reduced anxiety, improved emotional resilience
+                  </p>
+                </CardContent>
+              </Card>
 
-            <Card className="shadow-medium border-accent/20">
-              <CardHeader>
-                <Brain className="h-8 w-8 text-accent mb-2" />
-                <CardTitle>Improved Focus & Performance</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2 text-sm text-muted-foreground">
-                <p>Understanding stress patterns helps optimize study schedules and work routines for peak cognitive performance.</p>
-                <p className="font-medium text-foreground">Benefits: Better concentration, enhanced productivity, improved academic results</p>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-medium border-secondary/20">
+              {/* Objective 2 */}
+              <Card className="shadow-medium border-accent/20">
+                <CardHeader>
+                  <Brain className="h-8 w-8 text-accent mb-2" />
+                  <CardTitle>Focus, Performance & Well-Being</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-2 text-sm text-muted-foreground">
+                  <p>
+                    Help students use continuous stress feedback to improve focus, enhance academic performance, and prevent burnout through better self-regulation.
+                  </p>
+                  <p className="font-medium text-foreground">
+                    Benefits: Sharper concentration, sustainable productivity, balanced mental health
+                  </p>
+                </CardContent>
+              </Card>
+            {/* <Card className="shadow-medium border-secondary/20">
               <CardHeader>
                 <Activity className="h-8 w-8 text-secondary mb-2" />
                 <CardTitle>Personalized Wellness</CardTitle>
@@ -247,9 +260,9 @@ const Index = () => {
                 <p>AI-powered insights provide personalized recommendations based on individual stress patterns and recovery rates.</p>
                 <p className="font-medium text-foreground">Benefits: Tailored stress management, better sleep, healthier lifestyle</p>
               </CardContent>
-            </Card>
+            </Card> */}
 
-            <Card className="shadow-medium border-border/50">
+            {/* <Card className="shadow-medium border-border/50">
               <CardHeader>
                 <TrendingUp className="h-8 w-8 text-primary mb-2" />
                 <CardTitle>Long-term Health Tracking</CardTitle>
@@ -258,7 +271,7 @@ const Index = () => {
                 <p>Continuous data collection enables trend analysis and helps build sustainable stress management habits.</p>
                 <p className="font-medium text-foreground">Benefits: Informed decisions, preventive healthcare, lasting wellness</p>
               </CardContent>
-            </Card>
+            </Card> */}
           </div>
         </div>
       </section>
